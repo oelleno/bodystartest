@@ -58,7 +58,7 @@
         const day = value.substring(6, 8);
 
         // YYYY-MM-DD 형식으로 설정
-        input.value = `${year}-${month}-${day}`; 
+        input.value = `${year}-${month}-${day}`;
       } else {
         input.value = value; // 8자리가 아닐 경우, 현재 값 유지
       }
@@ -100,7 +100,8 @@
       <div style="display: flex; align-items: center;">
         <img src="./BDST.png" alt="Logo" style="height: 80px; margin-right: 20px;">
         <div style="display: flex; align-items: center; gap: 10px; margin-left: 30px; margin-top: 20px;">
-          <i class="fas fa-building" style="font-size: 14px; background: #000; color: #fff; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;"></i>
+          <i class="fas fa-building"
+            style="font-size: 14px; background: #000; color: #fff; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;"></i>
           <select name="branch" id="branch" class="thisbox" style="width: 120px; height: 30px;">
             <option value="">지점 선택</option>
             <option value="용문가장점">용문가장점</option>
@@ -111,9 +112,10 @@
       <h2 style="text-align: center; flex: 1;">회원가입계약서<br><span
           style="font-size: 14px; font-weight: bold; display: block; width: 100%;">Membership Agreement</span></h2>
 
-        <div style="display: flex; align-items: center; gap: 10px; margin-left: 30px; margin-top: 20px;">
+      <div style="display: flex; align-items: center; gap: 10px; margin-left: 30px; margin-top: 20px;">
         <p style="padding-left: 0px;"><i class="fas fa-user-tie" style="margin-right: 5px;"></i>계약담당</p>
-        <input type="text" name="contract_manager" class="thisbox" style="width: 120px; height: 30px; margin-top: 10px;">
+        <input type="text" name="contract_manager" class="thisbox"
+          style="width: 120px; height: 30px; margin-top: 10px;">
       </div>
     </div>
     <hr>
@@ -156,7 +158,8 @@
         <div style="flex: 1;">
           <p><i class="fas fa-id-card" style="margin-right: 5px;"></i>회원권</p>
           <div style="display: flex; gap: 10px;">
-            <select name="membership" id="membership" class="thisbox" style="width: 50%; height: 35px;" onchange="updateAdmissionFee()">
+            <select name="membership" id="membership" class="thisbox" style="width: 50%; height: 35px;"
+              onchange="updateAdmissionFee()">
               <option value="">선택</option>
               <option value="New">New</option>
               <option value="Renew">Renew</option>
@@ -172,7 +175,8 @@
         <div style="flex: 0.5;">
           <p><i class="fas fa-tshirt" style="margin-right: 5px;"></i>운동복 대여</p>
           <div style="display: flex; gap: 0px;">
-            <select name="rental_months" id="rental_months" class="thisbox" style="width: 50%;" onchange="updateRentalPrice(this)">
+            <select name="rental_months" id="rental_months" class="thisbox" style="width: 50%;"
+              onchange="updateRentalPrice(this)">
               <option value="">선택</option>
               <option value="1">1개월</option>
               <option value="2">2개월</option>
@@ -187,13 +191,15 @@
               <option value="11">11개월</option>
               <option value="12">12개월</option>
             </select>
-            <input type="text" name="rental_price" id="rental_price" class="thisbox" placeholder="" style="width: 50%; background-color: #f5f5f5;" readonly>
+            <input type="text" name="rental_price" id="rental_price" class="thisbox" placeholder=""
+              style="width: 50%; background-color: #f5f5f5;" readonly>
           </div>
         </div>
         <div style="flex: 0.5;">
           <p><i class="fas fa-box" style="margin-right: 5px;"></i>라커 대여</p>
           <div style="display: flex; gap: 0px;">
-            <select name="locker_months" id="locker_months" class="thisbox" style="width: 78px;" onchange="updateLockerPrice(this)">
+            <select name="locker_months" id="locker_months" class="thisbox" style="width: 90px;"
+              onchange="updateLockerPrice(this)">
               <option value="">선택</option>
               <option value="1">1개월</option>
               <option value="2">2개월</option>
@@ -208,15 +214,18 @@
               <option value="11">11개월</option>
               <option value="12">12개월</option>
             </select>
-            <input type="text" name="locker_price" id="locker_price" class="thisbox" placeholder="" oninput="formatCurrency(this)" style="width: 50%; background-color: #f5f5f5;" readonly>
+            <input type="text" name="locker_price" id="locker_price" class="thisbox" placeholder=""
+              oninput="formatCurrency(this)" style="width: 45%; background-color: #f5f5f5;" readonly>
           </div>
         </div>
         <div style="flex: 1;">
           <div style="display: flex; gap: 4.8px; align-items: center;">
             <div style="flex: 1;">
-              <p style="display: inline-block;"><i class="fas fa-won-sign" style="margin-left: -5px; margin-right: 5px;"></i>기간회비</p>
+              <p style="display: inline-block;"><i class="fas fa-won-sign"
+                  style="margin-left: -5px; margin-right: 5px;"></i>기간회비</p>
               <div style="display: flex; gap: 0px;">
-                <select name="membership_months" id="membership_months" class="thisbox" style="margin-left: 11px; width: 80px;" onchange="updateMembershipFee(this)">
+                <select name="membership_months" id="membership_months" class="thisbox"
+                  style="margin-left: 11px; width: 90px;" onchange="updateMembershipFee(this)">
                   <option value="">기간</option>
                   <option value="1">1개월</option>
                   <option value="2">2개월</option>
@@ -224,14 +233,15 @@
                   <option value="6">6개월</option>
                   <option value="12">12개월</option>
                 </select>
-                <input type="text" name="membership_fee" id="membership_fee" class="thisbox" style="width: 111px; height: 35px; background-color: #f5f5f5;"
-                  placeholder="" readonly>
+                <input type="text" name="membership_fee" id="membership_fee" class="thisbox"
+                  style="width: 102px; height: 35px; background-color: #f5f5f5;" placeholder="" readonly>
               </div>
             </div>
             <div style="flex: 1;">
               <p style="display: inline-block;"><i class="fas fa-tags" style="margin-right: 5px;"></i>할인</p>
-              <input type="text" name="discount" id="discount" class="thisbox" style="width: 93.2%; height: 35px; background-color: #ffebeb;" readonly
-                placeholder="총 할인금액 (₩)" onclick="showDiscountPopup()">
+              <input type="text" name="discount" id="discount" class="thisbox"
+                style="width: 93.2%; height: 35px; background-color: #ffebeb;" readonly placeholder="총 할인금액 (₩)"
+                onclick="showDiscountPopup()">
             </div>
           </div>
         </div>
@@ -254,28 +264,66 @@
           </div>
           <p style="margin-top: 15px;"><i class="fas fa-clock" style="margin-right: 5px;"></i>운동시간</p>
           <div style="border: 1px solid #ccc; padding: 10px; border-radius: 10px; margin: 0 0px 10px 15px;">
-            <div style="display: flex; align-items: center; gap: 15px;">
+            <div style="display: flex; align-items: center; gap: 1px;">
               <label style="display: flex; align-items: center; gap: 5px; font-size: 14px;">
-                <input type="checkbox" name="workout_time" value="오전">
-                오전
-                <select name="morning_hour" class="time-input" onchange="handleTimeSelect(this, '오전')">
-                  <option value="">시간 선택</option>
-                  <option value="1">0시~3시</option>
-                  <option value="2">3시~6시</option>
-                  <option value="3">6시~9시</option>
-                  <option value="4">9시~12시</option>
+                <select name="morning_hour" class="time-input">
+                  <option value="">시간</option>
+                  <option value="1">01시</option>
+                  <option value="2">02시</option>
+                  <option value="3">03시</option>
+                  <option value="4">04시</option>
+                  <option value="5">05시</option>
+                  <option value="6">06시</option>
+                  <option value="7">07시</option>
+                  <option value="8">08시</option>
+                  <option value="9">09시</option>
+                  <option value="10">10시</option>
+                  <option value="11">11시</option>
+                  <option value="12">12시</option>
+                  <option value="13">13시</option>
+                  <option value="14">14시</option>
+                  <option value="15">15시</option>
+                  <option value="16">16시</option>
+                  <option value="17">17시</option>
+                  <option value="18">18시</option>
+                  <option value="19">19시</option>
+                  <option value="20">20시</option>
+                  <option value="21">21시</option>
+                  <option value="22">22시</option>
+                  <option value="23">23시</option>
+                  <option value="24">24시</option>
                 </select>
+                <span>부터</span>
               </label>
               <label style="display: flex; align-items: center; gap: 5px; font-size: 14px;">
-                <input type="checkbox" name="workout_time" value="오후">
-                오후
-                <select name="afternoon_hour" class="time-input" onchange="handleTimeSelect(this, '오후')">
-                  <option value="">시간 선택</option>
-                  <option value="1">12시~15시</option>
-                  <option value="2">15시~18시</option>
-                  <option value="3">18시~21시</option>
-                  <option value="4">21시~24시</option>
+                <select name="afternoon_hour" class="time-input">
+                  <option value="">시간</option>
+                  <option value="1">01시</option>
+                  <option value="2">02시</option>
+                  <option value="3">03시</option>
+                  <option value="4">04시</option>
+                  <option value="5">05시</option>
+                  <option value="6">06시</option>
+                  <option value="7">07시</option>
+                  <option value="8">08시</option>
+                  <option value="9">09시</option>
+                  <option value="10">10시</option>
+                  <option value="11">11시</option>
+                  <option value="12">12시</option>
+                  <option value="13">13시</option>
+                  <option value="14">14시</option>
+                  <option value="15">15시</option>
+                  <option value="16">16시</option>
+                  <option value="17">17시</option>
+                  <option value="18">18시</option>
+                  <option value="19">19시</option>
+                  <option value="20">20시</option>
+                  <option value="21">21시</option>
+                  <option value="22">22시</option>
+                  <option value="23">23시</option>
+                  <option value="24">24시</option>
                 </select>
+                <input type="text" class="time-input" style="width: 224px;" placeholder="추가 입력">
               </label>
             </div>
           </div>
@@ -284,27 +332,42 @@
           <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
             <p style="margin: 0;"><i class="fas fa-calculator" style="margin-right: 5px;"></i>합계</p>
             <div style="display: flex; gap: 15px;">
-              <label style="font-size: 14px;"><input type="checkbox" name="payment" value="카드"> 카드</label>
-              <label style="font-size: 14px;"><input type="checkbox" name="payment" value="현금"> 현금</label>
-              <label style="font-size: 14px;"><input type="checkbox" name="payment" value="계좌이체"> 계좌이체</label>
+              <label style="font-size: 14px;"><input type="radio" name="payment" value="카드"> 카드</label>
+              <label style="font-size: 14px;"><input type="radio" name="payment" value="현금"> 현금</label>
+              <label style="font-size: 14px;"><input type="radio" name="payment" value="계좌이체"> 계좌이체</label>
+              <label style="font-size: 14px;"><input type="radio" name="payment" value="복합결제"> 복합결제</label>
             </div>
           </div>
-          <input type="text" name="total_amount" id="total_amount" class="thisbox"
-            style="margin-top: 0px; margin-bottom: 2px; background-color: #f5f5f5;" placeholder="" oninput="formatCurrency(this)" readonly>
-          <div style="margin-top: 1px; font-size: 13px; padding-left: 20px; display: flex; align-items: center; gap: 10px;">
-              <span style="white-space: nowrap; margin-right: 1px;">현금영수증 여부</span>
-            <label style="display: flex; align-items: center; gap: 5px;">
-              <input type="radio" name="cash_receipt" value="O"> O
-            </label>
-            <label style="display: flex; align-items: center; gap: 15px; margin-right: 5px;">
-              <input type="radio" name="cash_receipt" value="X"> X
-            </label>
-            <input type="text" name="receipt_phone" id="receipt_phone" class="thisbox"
-              style="width: 210px; height: 30px;" placeholder="번호 입력" oninput="formatPhoneNumber(this)">
+          <div class="total-amount-container">
+            <input type="text" name="total_amount" id="total_amount" class="thisbox" placeholder="총 금액" readonly>
+            <input type="text" name="unpaid" id="unpaid" class="thisbox" placeholder="결제예정" readonly>
+          </div>
+          <div style="margin-top: 1px; font-size: 13px; padding-left: 20px; display: flex; gap: 10px;">
+            <div style="flex: 1;">
+              <div style="display: flex; flex-direction: column; gap: 5px;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <span style="white-space: nowrap; margin-right: 1px;">현금영수증 여부</span>
+                  <label style="display: flex; align-items: center; gap: 5px;">
+                    <input type="radio" name="cash_receipt" value="O"> O
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 5px;">
+                    <input type="radio" name="cash_receipt" value="X"> X
+                  </label>
+                </div>
+                <input type="text" name="receipt_phone" id="receipt_phone" class="thisbox"
+                  style="width: 95%; height: 30px; margin-left: -5px;" placeholder="현금영수증 번호"
+                  oninput="formatPhoneNumber(this)">
+              </div>
+            </div>
+            <div id="payment-summary"
+              style="margin-top: 5px; margin-bottom: -73px; border: 1px solid #ccc; border-radius: 10px; padding: 8px; min-height: 30px; width: 47.5%; margin-right: 0px;">
+              <!-- 복합결제 내역이 여기에 표시됩니다 -->
+            </div>
           </div>
 
-          <p style="margin-top: 25px;"><i class="fas fa-calendar-plus" style="margin-right: 5px;"></i>회원권 시작일</p>
-          <input type="date" name="membership_start_date" id="membership_start_date" class="thisbox">
+          <p style="margin-top: 16px; width: 45.6%;"><i class="fas fa-calendar-plus" style="margin-right: 5px;"></i>회원권 시작일</p>
+          <input type="date" name="membership_start_date" id="membership_start_date" class="thisbox"
+            style="width: 46%;">
           <script>
             document.getElementById('membership_start_date').valueAsDate = new Date();
           </script>
@@ -320,31 +383,34 @@
             <label style="font-size: 14px; white-space: nowrap;"><input type="checkbox" name="referral" value="전단지">
               전단지</label>
             <div style="display: flex; align-items: center; gap: 0px;">
-              <label style="font-size: 14px; white-space: nowrap; margin-right: -10px;"><input type="checkbox" name="referral" value="SNS">
+              <label style="font-size: 14px; white-space: nowrap; margin-right: -10px;"><input type="checkbox"
+                  name="referral" value="SNS">
                 SNS</label>
               <input type="text" name="sns_detail" id="snsField" class="thisbox" style="width: 100px; height: 30px;"
                 placeholder="SNS 채널명">
             </div>
             <div style="display: flex; align-items: center; gap: 0px;">
-              <label style="font-size: 14px; white-space: nowrap; margin-right: -10px;"><input type="checkbox" name="referral" value="인터넷검색">
+              <label style="font-size: 14px; white-space: nowrap; margin-right: -10px;"><input type="checkbox"
+                  name="referral" value="인터넷검색">
                 인터넷검색</label>
               <input type="text" name="internet_detail" class="thisbox" style="width: 180px; height: 30px;"
                 placeholder="사이트/검색어">
             </div>
             <div style="display: flex; align-items: center; gap: 0px;">
-              <label style="font-size: 14px; white-space: nowrap; margin-right: -10px;"><input type="checkbox" name="referral" value="지인추천">
+              <label style="font-size: 14px; white-space: nowrap; margin-right: -10px;"><input type="checkbox"
+                  name="referral" value="지인추천">
                 지인추천</label>
               <input type="text" name="referral_name" class="thisbox" style="width: 70px; height: 30px;"
                 placeholder="추천인명">
-              <input type="text" name="referral_phone" id="referral_phone" class="thisbox" style="width: 130px; height: 30px;"
-                placeholder="추천인 연락처" oninput="formatPhoneNumber(this)">
+              <input type="text" name="referral_phone" id="referral_phone" class="thisbox"
+                style="width: 130px; height: 30px;" placeholder="추천인 연락처" oninput="formatPhoneNumber(this)">
             </div>
           </div>
         </div>
       </div>
 
       <!-- 약관 내용 추가 -->
-            <div class="section terms-section" style="margin-left: 10px;">
+      <div class="section terms-section" style="margin-left: 10px;">
         <p class="terms"><strong>1.회원권 휴회</strong> <br>
           6개월 1회, 12개월 2회 가능하고, 연기 신청서를 작성시 인정됩니다. 회당 최대 30일까지 휴회가 가능하고, 락카기간은 정지가 불가합니다.<br>군복무, 임신 등 센터가 인정하는 사유로 장기간
           이용할 수 없는 경우에는 센터에서 정한 양식을 작성하고 관계 증빙서류를 첨부 제출하여 휴회할 수 있습니다.<br>
@@ -370,17 +436,18 @@
           트레이너 동반 없이 개인 운동 중 상해가 발생하게 되는 경우, 본 센터는 책임지지 않습니다.<br>
           <strong>9.지점이용</strong> <br>
           등록한 지점 외 다른 지점은 월 5회 이용 가능합니다.<br>
-          <div style="text-align: right; margin-top: -25px;">
-            <label style="font-size: 14px;">
-              <input type="checkbox" name="terms_agree"> <strong>위 약관에 동의합니다</strong>
-            </label>
-          </div>
+        <div style="text-align: right; margin-top: -25px;">
+          <label style="font-size: 14px;">
+            <input type="checkbox" name="terms_agree"> <strong>위 약관에 동의합니다</strong>
+          </label>
+        </div>
 
-          <hr style="margin-left: -10px;">
+        <hr style="margin-left: -10px;">
         </p>
       </div>
 
-      <div class="section terms-section" style="border-bottom: 2.5px solid #003366; display: flex; gap: 10px; margin-top: -15px;">
+      <div class="section terms-section"
+        style="border-bottom: 2.5px solid #003366; display: flex; gap: 10px; margin-top: -15px;">
         <div style="flex: 1;">
           <p class="terms" style="margin-bottom: 2px; text-align: center;"><strong>24시 이용안내</strong></p>
           <hr style="border-top: 1px solid #003366; width: 120%; margin: 5px 0;">
@@ -429,19 +496,25 @@
       </div>
 
       <div class="section signbox">
-        <p style="font-weight: bold; font-size: 14px; margin-top: 4px;">본인은 위 계약내용을 <span class="dictation-text" data-text="모두 이해">모두 이해</span>하였고, 이에 <span class="dictation-text" data-text="동의">동의</span>하였습니다. 또한 본인 자필로 서명한 회원가입계약서 사본을 교부 받았음을 <span class="dictation-text" data-text="인정">인정</span>합니다.
+        <p style="font-weight: bold; font-size: 14px; margin-top: 4px;">본인은 위 계약내용을 <span class="dictation-text"
+            data-text="모두 이해">모두 이해</span>하였고, 이에 <span class="dictation-text" data-text="동의">동의</span>하였습니다. 또한 본인 자필로
+          서명한 회원가입계약서 사본을 교부 받았음을 <span class="dictation-text" data-text="인정">인정</span>합니다.
 
         <div class="sign-date">
-          <p style="font-size: 14px; font-weight: bold;"><select class="year" id="yearInput" style="font-size: 14px; font-weight: bold;"></select> 년
+          <p style="font-size: 14px; font-weight: bold;"><select class="year" id="yearInput"
+              style="font-size: 14px; font-weight: bold;"></select> 년
             <select class="month" id="monthInput" style="font-size: 14px; font-weight: bold;"></select> 월
             <select class="day" id="dayInput" style="font-size: 14px; font-weight: bold;"></select> 일
           </p>
         </div>
         <div>
-          <p style="margin: -30px 180px 5px 0px; text-align: right;">신청인 <p style="margin: -28px 10px 0px 0px; text-align: right;"><span class="dictation-text" data-text="(서명)" style="padding: 30px 110px; display: inline-block; position: relative;"><span style="position: absolute; bottom: 30px; right: 5px;">(서명)</span></span></p>
-          </div>
+          <p style="margin: -30px 180px 5px 0px; text-align: right;">신청인
+          <p style="margin: -28px 10px 0px 0px; text-align: right;"><span class="dictation-text" data-text="(서명)"
+              style="padding: 30px 110px; display: inline-block; position: relative;"><span
+                style="position: absolute; bottom: 30px; right: 5px;">(서명)</span></span></p>
         </div>
       </div>
+  </div>
   </div>
   <script src="./dictation.js"></script>
   <style>
@@ -454,6 +527,7 @@
       padding: 2px 4px;
       border-radius: 3px;
     }
+
     .dictation-text img {
       position: absolute;
       top: 0;
@@ -504,7 +578,7 @@
 
     // Initialize dictation text handlers
     document.querySelectorAll('.dictation-text').forEach(element => {
-      element.addEventListener('click', function() {
+      element.addEventListener('click', function () {
         const text = this.dataset.text;
         initDictationCanvas(text, (imageData) => {
           const img = document.createElement('img');
@@ -520,4 +594,4 @@
   </div>
   </form>
   </div>
-</body</html>
+  </body< /html>
