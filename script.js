@@ -510,13 +510,8 @@ function updatePaymentSummary() {
         unpaidField.value = '결제예정 ₩' + (unpaidAmount > 0 ? unpaidAmount.toLocaleString('ko-KR') : '0');
         unpaidField.style.backgroundColor = unpaidAmount > 0 ? '#ffebeb' : '#f5f5f5';
       }
-    } else {
-      paymentSummary.innerHTML = '복합결제 내역이 없습니다';
-      if (unpaidField) {
-        unpaidField.value = '';
-        unpaidField.style.backgroundColor = '#f5f5f5';
-      }
-    }
+    } 
+    
   }
 }
 

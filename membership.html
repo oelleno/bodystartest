@@ -98,7 +98,7 @@
   <div class="container">
     <div class="header-container">
       <div style="display: flex; align-items: center;">
-        <img src="./BDST.png" alt="Logo" style="height: 80px; margin-right: 20px;">
+        <img src="./BDST.png" alt="Logo" style="height: 50px; margin-right: 20px;">
         <div style="display: flex; align-items: center; gap: 10px; margin-left: 30px; margin-top: 20px;">
           <i class="fas fa-building"
             style="font-size: 14px; background: #000; color: #fff; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;"></i>
@@ -340,11 +340,11 @@
           </div>
           <div class="total-amount-container">
             <input type="text" name="total_amount" id="total_amount" class="thisbox" placeholder="총 금액" readonly>
-            <input type="text" name="unpaid" id="unpaid" class="thisbox" placeholder="결제예정" readonly>
+            <input type="text" name="unpaid" id="unpaid" class="thisbox" readonly>
           </div>
-          <div style="margin-top: 1px; font-size: 13px; padding-left: 20px; display: flex; gap: 10px;">
+          <div style="margin-top: 7px; font-size: 13px; padding-left: 20px; display: flex; gap: 10px;">
             <div style="flex: 1;">
-              <div style="display: flex; flex-direction: column; gap: 5px;">
+              <div style="display: flex; flex-direction: column; gap: 2px;">
                 <div style="display: flex; align-items: center; gap: 10px;">
                   <span style="white-space: nowrap; margin-right: 1px;">현금영수증 여부</span>
                   <label style="display: flex; align-items: center; gap: 5px;">
@@ -359,13 +359,13 @@
                   oninput="formatPhoneNumber(this)">
               </div>
             </div>
+            <!-- 복합결제 내역 -->
             <div id="payment-summary"
-              style="margin-top: 5px; margin-bottom: -73px; border: 1px solid #ccc; border-radius: 10px; padding: 8px; min-height: 30px; width: 47.5%; margin-right: 0px;">
-              <!-- 복합결제 내역이 여기에 표시됩니다 -->
-            </div>
+              style="margin-top: 5px; margin-bottom: -70px; border: 1px solid #ccc; background-color: #f5f5f5; border-radius: 10px; padding: 8px; min-height: 30px; width: 47.5%; margin-right: 0px; font-size: 14px;">
+             </div>
           </div>
 
-          <p style="margin-top: 16px; width: 45.6%;"><i class="fas fa-calendar-plus" style="margin-right: 5px;"></i>회원권 시작일</p>
+          <p style="margin-top: 13px; width: 45.6%;"><i class="fas fa-calendar-plus" style="margin-right: 5px;"></i>회원권 시작일</p>
           <input type="date" name="membership_start_date" id="membership_start_date" class="thisbox"
             style="width: 46%;">
           <script>

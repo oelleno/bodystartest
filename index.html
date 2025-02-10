@@ -188,24 +188,37 @@
                 toggleLoading(true);
                 const credential = firebase.auth.PhoneAuthProvider.credential(verificationId, code);
                 await auth.signInWithCredential(credential);
+                console.log(credential);
                 showStatus('전화번호가 성공적으로 인증되었습니다!', 'success');
 
-                // 모든 인증 관련 UI 숨기기
-                phoneForm.classList.add('d-none');
-                verificationForm.classList.add('d-none');
-                statusDiv.classList.add('d-none');
-
-                // 계약서 UI 표시
-                const contractsHtml = `
-                    <div id="contracts-form" class="text-center">
-                        <h3 class="mb-4">계약서 선택</h3>
-                        <div class="d-grid gap-3">
-                            <a href="membership.html?phone=${phoneInput.value.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3')}" class="btn btn-primary btn-lg">회원가입계약서</a>
-                            <button class="btn btn-secondary btn-lg" disabled title="준비중">PT계약서 (준비중)</button>
-                            <button class="btn btn-secondary btn-lg" disabled title="준비중">일일권계약서 (준비중)</button>
+                // Show admin verification form after phone verification
+                const adminVerificationHtml = `
+                    <div id="admin-verify-after-phone" class="mt-3">
+                        <label class="form-label">관리자 코드 입력</label>
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="admin-code-after-phone" placeholder="관리자 코드">
+                            <button class="btn btn-primary" id="verify-admin-after-phone">확인</button>
                         </div>
                     </div>`;
-                document.querySelector('.card-body').innerHTML = contractsHtml;
+                verificationForm.innerHTML = adminVerificationHtml;
+
+                // Add event listener for admin verification after phone
+                document.getElementById('verify-admin-after-phone').addEventListener('click', () => {
+                    const adminCode = document.getElementById('admin-code-after-phone').value;
+                    if (adminCode === '0000') {
+                        showContractsUI(phoneInput.value);
+                    } else {
+                        showStatus('잘못된 관리자 코드입니다.', 'danger');
+                    }
+                });
+
+                // Add Enter key event listener
+                document.getElementById('admin-code-after-phone').addEventListener('keyup', (event) => {
+                    if (event.key === 'Enter') {
+                        document.getElementById('verify-admin-after-phone').click();
+                    }
+                });
+
             } catch (error) {
                 console.error('인증번호 확인 오류:', error);
                 showStatus(error.message, 'danger');
@@ -214,27 +227,12 @@
             }
         }
 
+
         // 관리자 코드 확인 함수
         function verifyAdmin() {
             const adminCode = document.getElementById('admin-code').value;
             if (adminCode === '0000') {
-                // 모든 인증 관련 UI 숨기기
-                document.getElementById('admin-form').classList.add('d-none');
-                phoneForm.classList.add('d-none');
-                verificationForm.classList.add('d-none');
-                statusDiv.classList.add('d-none');
-
-                // 계약서 UI 표시
-                const contractsHtml = `
-                    <div id="contracts-form" class="text-center">
-                        <h3 class="mb-4">계약서 선택</h3>
-                        <div class="d-grid gap-3">
-                            <a href="membership.html?phone=${phoneInput.value.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3')}" class="btn btn-primary btn-lg">회원가입계약서</a>
-                            <button class="btn btn-secondary btn-lg" disabled title="준비중">PT계약서 (준비중)</button>
-                            <button class="btn btn-secondary btn-lg" disabled title="준비중">일일권계약서 (준비중)</button>
-                        </div>
-                    </div>`;
-                document.querySelector('.card-body').innerHTML = contractsHtml;
+                showContractsUI(phoneInput.value);
             } else {
                 showStatus('잘못된 관리자 코드입니다.', 'danger');
             }
@@ -248,6 +246,26 @@
         });
 
         document.getElementById('verify-admin').addEventListener('click', verifyAdmin);
+
+        // 계약서 UI 표시 함수
+        function showContractsUI(phone) {
+            // 모든 인증 관련 UI 숨기기
+            phoneForm.classList.add('d-none');
+            verificationForm.classList.add('d-none');
+            statusDiv.classList.add('d-none');
+
+            // 계약서 UI 표시
+            const contractsHtml = `
+                <div id="contracts-form" class="text-center">
+                    <h3 class="mb-4">계약서 선택</h3>
+                    <div class="d-grid gap-3">
+                        <a href="membership.html?phone=${phone.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3')}" class="btn btn-primary btn-lg">회원가입계약서</a>
+                        <button class="btn btn-secondary btn-lg" disabled title="준비중">PT계약서 (준비중)</button>
+                        <button class="btn btn-secondary btn-lg" disabled title="준비중">일일권계약서 (준비중)</button>
+                    </div>
+                </div>`;
+            document.querySelector('.card-body').innerHTML = contractsHtml;
+        }
 
         // 이벤트 리스너
         sendCodeBtn.addEventListener('click', () => {
